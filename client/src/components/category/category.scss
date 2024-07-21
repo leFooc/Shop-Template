@@ -1,0 +1,132 @@
+.search-bar-wrapper {
+    width: 100%;
+    padding: 8px 12px 8px 12px;
+    background-color: #fff;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0px;
+    top: 43px;
+    z-index: 999;
+
+    input {
+        width: 100%;
+        height: 33px;
+        padding: 12px 40px 12px 40px;
+        border: 1px solid #555;
+        outline: none;
+        border-radius: 16px;
+    }
+
+    .icon-wrapper {
+        height: 31px;
+        width: 31px;
+        border: none;
+        outline: none;
+        border-radius: 32px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #555;
+        }
+
+        &:focus {
+            background-color: #555;
+        }
+
+        &.search-icon {
+            left: 13px;
+        }
+
+        &.cancel-icon {
+            right: 13px;
+        }
+    }
+}
+
+.category-list-wrapper {
+    width: 100%;
+    padding: 8px 12px 0px 12px;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-radius: 0px 0px 32px 32px;
+    overflow: hidden;
+    position: fixed;
+    left: 0px;
+    top: 91px;
+    z-index: 999;
+
+    .category-wrapper {
+        width: 100%;
+        padding: 0px 16px 0px 16px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .category {
+        width: 100%;
+        font-size: 16px;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &.active {
+            color: blue;
+        }
+    }
+
+    .category-indicator {
+        height: 4px;
+        width: 100%;
+        margin-top: 4px;
+
+        &.active {
+            background-color: blue;
+            border-radius: 3px 3px 0px 0px;
+        }
+    }
+}
+
+.products-wrapper {
+    margin-top: 100px;
+}
+
+.product-cell-wrapper {
+    padding: 8px 8px 20px 8px;
+    border: 2px solid #555;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+
+
+    .product-image {
+        height: 200px;
+        width: 100%;
+        border-radius: 8px;
+        object-fit: fill;
+    }
+
+    .product-label {
+        margin-top: 12px;
+        font-size: 20px;
+        font-weight: 500;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

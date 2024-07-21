@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Category_1 {
+  id            Int           @default(autoincrement()) @id
+  name          String
+  createAt      DateTime      @default(now())
+  updateAt      DateTime      @updatedAt
+  sub_category  Category_2[]
+}
+
+model Category_2 {
+  id                Int         @default(autoincrement()) @id
+  name              String 
+  super_category_id Int
+  createAt          DateTime    @default(now())
+  updateAt          DateTime    @updatedAt
+  super_category    Category_1  @relation(fields: [super_category_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  product           Product[]
+}
+
+model Product {
+  id                Int         @default(autoincrement()) @id
+  category_id       Int
+  name              String
+  description       String?
+  price_in          Int   
+  price_out         Int
+  createAt          DateTime    @default(now())
+  updateAt          DateTime    @updatedAt
+  category          Category_2  @relation(fields: [category_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  stock_related     Stock[]
+}
+
+model Color {
+  id                Int       @default(autoincrement()) @id
+  name              String
+  display_value     String?
+  createAt          DateTime  @default(now())
+  updateAt          DateTime  @updatedAt  
+  stock_related     Stock[]
+}
+
+
+model Size {
+  id                Int       @default(autoincrement()) @id
+  name              String
+  createAt          DateTime  @default(now())
+  updateAt          DateTime  @updatedAt
+  stock_related     Stock[]
+}
+
+model Shop {
+  id                Int       @default(autoincrement()) @id
+  name              String
+  location          String?
+  createAt          DateTime  @default(now())
+  updateAt          DateTime  @updatedAt
+  stock_related     Stock[]
+}
+
+model Stock {
+  id          Int       @default(autoincrement()) @id
+  product_id  Int
+  color_id    Int?
+  size_id     Int?
+  shop_id     Int?
+  stock       Int?
+  product     Product   @relation(fields: [product_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  color       Color?    @relation(fields: [color_id], references: [id], onUpdate: SetNull, onDelete: SetNull)
+  size        Size?     @relation(fields: [size_id], references: [id], onUpdate: SetNull, onDelete: SetNull)
+  shop        Shop?     @relation(fields: [shop_id], references: [id], onUpdate: SetNull, onDelete: SetNull)
+}

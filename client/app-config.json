@@ -1,0 +1,19 @@
+{
+  "app": {
+    "title": "Bom",
+    "headerTitle": "Bom",
+    "headerColor": "",
+    "textColor": "white",
+    "statusBarColor": "linear-gradient(red, yellow)",
+    "leftButton": "back",
+    "statusBar": "transparent",
+    "actionBarHidden": true,
+    "hideAndroidBottomNavigationBar": false,
+    "hideIOSSafeAreaBottom": false
+  },
+  "pages": [],
+  "debug": false,
+  "listCSS": [],
+  "listSyncJS": [],
+  "listAsyncJS": []
+}

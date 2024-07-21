@@ -1,30 +1,20 @@
-# Bom
+## Overview
 
-## ZMP CLI Options
+Client
 
-ZMP app created with following options:
+## Tech stacks
 
+- Core tech: Typescript, React
+- Libraries: zmp, ZaloUI, MaterialUI, SwiperJS
+- Preprocessor: SCSS
+- Run environment: Vite
+
+## Running the app
+
+```bash
+# run development server
+$ npm run start
+
+#deploy mini app for production
+$ npm run deploy
 ```
-{
-  "cwd": "/Users/onethird/Documents/phuc/JS | TS/Nest/Bom/client",
-  "newProject": true,
-  "name": "Bom",
-  "package": "zmp-ui",
-  "framework": "react-typescript",
-  "cssPreProcessor": "scss",
-  "template": "blank",
-  "theming": {
-    "color": "#007aff",
-    "darkTheme": false,
-    "fillBars": false
-  },
-  "customBuild": false,
-  "includeTailwind": false,
-  "stateManagement": "recoil"
-}
-```
-
-## NPM Scripts
-
-* 🔥 `start` - run development server
-* 🙏 `deploy` - deploy mini app for production

@@ -18,15 +18,15 @@ export const categories: category [] = [
         name: "ao",
         sub_categories: [
             {
-                id: "2-1",
-                key: "mut day",
-                name: "mut day",
+                id: "1",
+                key: "type 1",
+                name: "type 1",
                 sub_categories: []
             },
             {
-                id: "2-2",
-                key: "mut vua",
-                name: "mut vua",
+                id: "2",
+                key: "type 2",
+                name: "type 2",
                 sub_categories: []
             }
         ]
@@ -37,13 +37,13 @@ export const categories: category [] = [
         name: "quan",
         sub_categories: [
             {
-                id: "3-1",
+                id: "1",
                 key: "type-1",
                 name: "type-1",
                 sub_categories: []
             },
             {
-                id: "3-2",
+                id: "2",
                 key: "type-2",
                 name: "type-2",
                 sub_categories: []
